@@ -1,10 +1,20 @@
 {
   "name": "exp-template",
+  "author": "Akil Jawad",
   "version": "1.0.0",
-  "description": "",
+  "description": "This project is a clean, readable, maintainable, scalable, and testing-friendly template built with Express.js using Javascript",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon src/app.js",
+    "test": "NODE_ENV=test jest --watchAll --coverage --runInBand",
+    "win:test": "set NODE_ENV=test&&jest --watchAll --coverage --runInBand"
   },
-  "private": true
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:akiljawad/express-template.git"
+  },
+  "private": true,
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
 }
