@@ -1,6 +1,7 @@
 {
   "name": "exp-template",
   "author": "Akil Jawad",
+  "type": "module",
   "version": "1.0.0",
   "description": "This project is a clean, readable, maintainable, scalable, and testing-friendly template built with Express.js using Javascript",
   "main": "app.js",
