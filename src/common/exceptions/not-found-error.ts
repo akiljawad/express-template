@@ -1,11 +1,8 @@
 import {Messages, StatusCode} from "../constants";
+import {HttpError} from "./http-error";
 
-class NotFoundError extends Error {
-    public readonly status: number;
-
+class NotFoundError extends HttpError {
     constructor(message: string = Messages.NOT_FOUND_ERROR) {
-        super(message);
-        this.name = 'NotFoundError';
-        this.status = StatusCode.HTTP_404_NOT_FOUND;
+        super(StatusCode.HTTP_404_NOT_FOUND, message);
     }
 }

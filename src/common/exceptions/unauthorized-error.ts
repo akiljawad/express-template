@@ -1,11 +1,8 @@
 import {Messages, StatusCode} from "../constants";
+import {HttpError} from "./http-error";
 
-class UnauthorizedError extends Error {
-    public readonly status: number;
-
+class UnauthorizedError extends HttpError {
     constructor(message: string = Messages.UNAUTHORIZED_ERROR) {
-        super(message);
-        this.name = 'UnauthorizedError';
-        this.status = StatusCode.HTTP_401_UNAUTHORIZED;
+        super(StatusCode.HTTP_401_UNAUTHORIZED, message);
     }
 }
