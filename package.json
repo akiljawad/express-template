@@ -2,7 +2,7 @@
   "name": "exp-template",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "app.ts",
   "scripts": {
     "start": "node dist/app.js",
     "build": "tsc",
@@ -20,6 +20,7 @@
     "@types/cors": "^2.8.18",
     "body-parser": "^2.2.0",
     "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "helmet": "^8.1.0"
   }
