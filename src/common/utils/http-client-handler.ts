@@ -1,5 +1,5 @@
 import axios from "axios";
-import {HttpConfig} from "../../types/http-config.type";
+import {HttpConfig} from "../../types";
 
 export const httpClientHandler = (config: HttpConfig) => {
     return axios.create({
