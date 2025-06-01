@@ -5,12 +5,14 @@ import env from "../config";
 
 export const errorHandler =
     (err: Error, req: Request, res: Response, next: NextFunction): void => {
-        const status = err instanceof HttpError ? err.status : 500;
+        const statusCode = err instanceof HttpError ? err.status : 500;
         const message = err.message || Messages.INTERNAL_ERROR;
 
-        res.status(status).json({
+        res.status(statusCode).json({
             error: {
-                code: status,
+                status: 'failed',
+                code: statusCode,
+                reason: err.name,
                 message: env.NODE_ENV === 'production' ? Messages.REQUEST_ERROR_PROD : message,
                 ...(env.NODE_ENV !== 'production' && {stack: err.stack})
             }

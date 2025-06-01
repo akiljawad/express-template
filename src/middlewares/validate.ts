@@ -1,6 +1,6 @@
 import {NextFunction, Request, Response} from 'express';
 import {ZodSchema} from 'zod';
-import {BadRequestError, UnprocessableError} from '../common/exceptions'
+import {UnprocessableError} from '../common/exceptions'
 
 export const validateSchema =
     (schema: ZodSchema<any>, source: 'body' | 'params' | 'query' = 'body') =>
@@ -8,7 +8,7 @@ export const validateSchema =
             const data = req[source];
 
             if ((source === 'body' || source === 'query') && (!data || Object.keys(data).length === 0)) {
-                return next(new BadRequestError(`${source} is required and cannot be empty`));
+                return next(new UnprocessableError(`${source} is required and cannot be empty`));
             }
 
             const result = schema.safeParse(req[source]);

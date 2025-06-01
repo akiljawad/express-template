@@ -8,6 +8,7 @@ export const successResponse = <T>(
     code: number = StatusCode.HTTP_200_OK
 ): Response => {
     return res.status(code).json({
+        status: 'success',
         code,
         message,
         data,
