@@ -3,6 +3,7 @@ import helmet from "helmet";
 import cors from "cors";
 import bodyParser from "body-parser";
 import {errorHandler} from "./middlewares";
+import router from "./routes";
 
 const app = express();
 app.use(express.json());
@@ -14,6 +15,8 @@ app.get('/', (req, res) => {
     console.log(req.body);
     res.send('Hello World!')
 })
+
+app.use('/api', router)
 
 app.use(errorHandler)
 
