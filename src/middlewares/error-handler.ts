@@ -1,7 +1,7 @@
 import {NextFunction, Request, Response} from 'express';
 import {HttpError} from "../common/exceptions";
 import {Messages} from "../common/constants";
-import env from "../config";
+import {env} from "../config";
 
 export const errorHandler =
     (err: Error, req: Request, res: Response, next: NextFunction): void => {

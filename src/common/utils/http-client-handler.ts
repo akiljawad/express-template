@@ -1,5 +1,10 @@
 import axios from "axios";
-import {HttpConfig} from "../../types";
+
+export type HttpConfig = {
+    baseUrl: string;
+    headers?: { Authorization?: string };
+    timeout?: number;
+}
 
 export const httpClientHandler = (config: HttpConfig) => {
     return axios.create({

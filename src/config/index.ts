@@ -1,12 +1,19 @@
-import {EnvConfig} from '../types'
 import dotenv from "dotenv";
+import {z} from "zod";
 
 dotenv.config();
 
-const env: EnvConfig = {
-    PORT: Number(process.env.PORT) || 3000,
-    NODE_ENV: (process.env.NODE_ENV as EnvConfig['NODE_ENV']) || 'development',
-};
+const envSchema = z.object({
+    PORT: z.coerce.number().default(3000),
+    NODE_ENV: z.enum(["development", "production", "test"]).default("development"),
+});
 
-export default env;
+const parsed = envSchema.safeParse(process.env);
+
+if (!parsed.success) {
+    console.error("Invalid environment variables:\n", parsed.error.format());
+    process.exit(1);
+}
+
+export const env = parsed.data;
 
