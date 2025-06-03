@@ -1,0 +1,15 @@
+import {Request, Response} from 'express';
+import {GrantAccessDto} from "../dtos";
+import {successResponse} from "../common/response";
+import {authServiceV1} from '../services';
+
+export const authControllerV1 = {
+    grantAccessToken: async (req: Request, res: Response) => {
+        const dto: GrantAccessDto = req.body;
+        const token = await authServiceV1.grantAccessToken(dto);
+        return successResponse(res, token);
+    },
+    verifyAccessToken: async (req: Request, res: Response) => {
+        return successResponse(res, 'verifyAccessToken');
+    }
+}

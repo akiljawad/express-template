@@ -1,2 +1,2 @@
-export * from './messages';
-export * from './status-code';
+export * from './messages.constant';
+export * from './status-code.constant';

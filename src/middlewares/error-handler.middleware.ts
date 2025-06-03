@@ -1,5 +1,5 @@
 import {NextFunction, Request, Response} from 'express';
-import {HttpError} from "../common/exceptions";
+import {HttpError} from "../common/errors";
 import {Messages} from "../common/constants";
 import {env} from "../config";
 

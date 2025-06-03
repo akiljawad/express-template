@@ -1,6 +1,6 @@
 import {NextFunction, Request, Response} from 'express';
 import {ZodSchema} from 'zod';
-import {UnprocessableError} from '../common/exceptions'
+import {UnprocessableError} from '../common/errors'
 
 export const validateSchema =
     (schema: ZodSchema<any>, source: 'body' | 'params' | 'query' = 'body') =>

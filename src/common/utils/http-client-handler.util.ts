@@ -6,7 +6,7 @@ export type HttpConfig = {
     timeout?: number;
 }
 
-export const httpClientHandler = (config: HttpConfig) => {
+export const httpClientHandlerUtil = (config: HttpConfig) => {
     return axios.create({
         baseURL: config.baseUrl,
         ...(('headers' in config) && {headers: config.headers}),
