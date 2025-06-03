@@ -2,8 +2,8 @@ import express from 'express';
 import helmet from "helmet";
 import cors from "cors";
 import bodyParser from "body-parser";
-import {errorHandler} from "./middlewares";
-import router from "./routes";
+import {errorHandler} from "@middlewares";
+import router from "@routes";
 
 const app = express();
 app.use(express.json());

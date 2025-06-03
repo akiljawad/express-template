@@ -1,7 +1,7 @@
 import express from 'express';
-import {asyncHandler, validateSchema} from "../../middlewares";
-import {GrantAccessSchema} from "../../dtos";
-import {authControllerV1} from "../../controller";
+import {asyncHandler, validateSchema} from "@middlewares";
+import {GrantAccessSchema} from "@dtos";
+import {authControllerV1} from "@controller";
 
 const router = express.Router();
 

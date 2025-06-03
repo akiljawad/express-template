@@ -1,4 +1,4 @@
-import {Messages, StatusCode} from "../constants";
+import {Messages, StatusCode} from "@common/constants";
 import {Response} from 'express';
 
 export const successResponse = <T>(

@@ -1,4 +1,4 @@
-import {CreateUserDto} from "../dtos";
+import {CreateUserDto} from "@dtos";
 
 export const userServiceV1 = {
     createUser: async (data: CreateUserDto): Promise<{ accessToken: string }> => {

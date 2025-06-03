@@ -1,5 +1,5 @@
-import {Messages, StatusCode} from "../constants";
-import {HttpError} from "./http.error";
+import {Messages, StatusCode} from "@common/constants";
+import {HttpError} from "@common/errors/http.error";
 
 export class BadRequestError extends HttpError {
     constructor(message: string = Messages.BAD_REQUEST_ERROR) {

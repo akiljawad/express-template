@@ -1,4 +1,4 @@
-import {GrantAccessDto} from "../dtos";
+import {GrantAccessDto} from "@dtos";
 
 export const authServiceV1 = {
     grantAccessToken: async (data: GrantAccessDto): Promise<{ accessToken: string }> => {

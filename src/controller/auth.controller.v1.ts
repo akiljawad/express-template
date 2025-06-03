@@ -1,7 +1,7 @@
 import {Request, Response} from 'express';
-import {GrantAccessDto} from "../dtos";
-import {successResponse} from "../common/response";
-import {authServiceV1} from '../services';
+import {GrantAccessDto} from "@dtos";
+import {successResponse} from "@common/response";
+import {authServiceV1} from '@services';
 
 export const authControllerV1 = {
     grantAccessToken: async (req: Request, res: Response) => {

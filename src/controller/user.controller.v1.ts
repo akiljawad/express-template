@@ -1,7 +1,7 @@
 import {Request, Response} from 'express';
-import {successResponse} from "../common/response";
-import {userServiceV1} from '../services';
-import {CreateUserDto} from "../dtos";
+import {successResponse} from "@common/response";
+import {userServiceV1} from '@services';
+import {CreateUserDto} from "@dtos";
 
 export const userControllerV1 = {
     create: async (req: Request, res: Response) => {
