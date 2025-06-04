@@ -2,6 +2,7 @@ import {Request, Response} from 'express';
 import {successResponse} from "@common/response";
 import {userServiceV1} from '@services';
 import {CreateUserDto, DeleteUserDto, GetUserDto, UpdateUserDto} from "@dtos";
+import {log} from "@config/logger";
 
 export const userControllerV1 = {
     create: async (req: Request, res: Response) => {
@@ -10,6 +11,7 @@ export const userControllerV1 = {
         return successResponse(res, user);
     },
     findAll: async (req: Request, res: Response) => {
+        log.info('Controller --> findAll')
         const users = await userServiceV1.getAllUsers();
         return successResponse(res, users);
     },

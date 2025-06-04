@@ -2,6 +2,7 @@ import {CreateUserDto, DeleteUserDto, GetUserDto, UpdateUserDto} from "@dtos";
 import {Users} from "@entities";
 import {userRepository} from "@config/db";
 import {BadRequestError} from "@common/errors";
+import {log} from "@config/logger";
 
 export const userServiceV1 = {
     createUser: async (data: CreateUserDto): Promise<Users> => {
@@ -14,6 +15,7 @@ export const userServiceV1 = {
         return userRepository.save(newUser);
     },
     getAllUsers: async (): Promise<Users[]> => {
+        log.info('Service --> findAll')
         return await userRepository.find();
     },
     getUser: async (data: GetUserDto): Promise<Users> => {
