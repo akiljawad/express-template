@@ -5,7 +5,7 @@ import {env} from "@config/index";
 
 export class MemoryCache implements CacheStore {
     private cache: NodeCache;
-    private prefix: string;
+    private readonly prefix: string;
 
     constructor(ttl = 60) {
         this.cache = new NodeCache({stdTTL: ttl});
