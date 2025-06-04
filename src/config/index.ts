@@ -17,6 +17,7 @@ const envSchema = z.object({
     DB_SLAVE_NAME: z.string().default("test"),
     DB_SLAVE_USER: z.string().default("root"),
     DB_SLAVE_PASS: z.string().default(""),
+    CACHE_PREFIX: z.string().default("CACHE_PREFIX"),
 });
 
 const parsed = envSchema.safeParse(process.env);
