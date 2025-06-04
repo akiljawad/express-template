@@ -14,5 +14,5 @@ export const AppDataSource = new DataSource({
     entities: [],
 });
 
-// For synchronise existing model to this project - use below line
+// For synchronized existing model to this project - use below line
 // npx typeorm-model-generator -h localhost -d your_db_name -u root -x password -e mysql -o ./src/models
