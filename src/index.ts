@@ -4,6 +4,7 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import {errorHandler} from "@middlewares";
 import router from "@routes";
+import {AppDataSource} from "@config/db";
 
 const app = express();
 app.use(express.json());
@@ -19,5 +20,9 @@ app.get('/', (req, res) => {
 app.use('/api', router)
 
 app.use(errorHandler)
+
+AppDataSource.initialize().then(() => {
+    console.log("DB Connected");
+})
 
 export default app;

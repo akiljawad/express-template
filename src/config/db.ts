@@ -1,6 +1,7 @@
 import 'reflect-metadata';
 import {DataSource} from 'typeorm';
 import {env} from "@config/index";
+import {Users} from "@entities";
 
 export const AppDataSource = new DataSource({
     type: env.DB_TYPE,
@@ -11,8 +12,7 @@ export const AppDataSource = new DataSource({
     database: env.DB_NAME,
     synchronize: false,
     migrations: [],
-    entities: [],
+    entities: [Users],
 });
 
-// For synchronized existing model to this project - use below line
-// npx typeorm-model-generator -h localhost -d your_db_name -u root -x password -e mysql -o ./src/models
+export const userRepository = AppDataSource.getRepository(Users);
